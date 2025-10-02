@@ -1,0 +1,282 @@
+@prefix : <https://w3id.org/italia/health/onto/health-organisations/> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+@prefix cov: <https://w3id.org/italia/onto/COV/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix data: <https://w3id.org/italia/data/health/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/italia/health/onto/health-organisations/> .
+
+<https://w3id.org/italia/onto/healthcare> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/italia/health/onto/health-organisations/isUnderTerritorialCompetenceOf
+:isUnderTerritorialCompetenceOf rdf:type owl:ObjectProperty ;
+                                rdfs:domain :HealthcareFacility ;
+                                rdfs:range :HealthCareAuthority ;
+                                rdfs:label "is under territorial competence of"@en .
+
+
+###  https://w3id.org/italia/onto/CLV/hasSpatialCoverage
+clv:hasSpatialCoverage rdf:type owl:ObjectProperty ;
+                       rdfs:domain cov:Organization ;
+                       rdfs:range clv:City ;
+                       rdfs:label "has spatial coverage"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/italia/health/onto/health-organisations/hasFemaleStaffCount
+:hasFemaleStaffCount rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf :hasTotalStaffCount ;
+                     rdfs:domain :InpatientFacility ;
+                     rdfs:range xsd:integer ;
+                     rdfs:label "Female staff count"@en .
+
+
+###  https://w3id.org/italia/health/onto/health-organisations/hasMaleStaffCount
+:hasMaleStaffCount rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf :hasTotalStaffCount ;
+                   rdfs:domain :InpatientFacility ;
+                   rdfs:range xsd:integer ;
+                   rdfs:label "Male staff count"@en .
+
+
+###  https://w3id.org/italia/health/onto/health-organisations/hasPlannedBeds
+:hasPlannedBeds rdf:type owl:DatatypeProperty ;
+                rdfs:domain :InpatientFacility ;
+                rdfs:range xsd:integer ;
+                rdfs:label "Number of planned beds"@en .
+
+
+###  https://w3id.org/italia/health/onto/health-organisations/hasTotalStaffCount
+:hasTotalStaffCount rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :InpatientFacility ;
+                    rdfs:range xsd:integer ;
+                    rdfs:label "Total staff count"@en .
+
+
+###  https://w3id.org/italia/onto/CLV/hasIstatCode
+clv:hasIstatCode rdf:type owl:DatatypeProperty ;
+                 rdfs:domain clv:City ;
+                 rdfs:range rdfs:Literal ;
+                 rdfs:label "ISTAT code"@en .
+
+
+###  https://w3id.org/italia/onto/CLV/hasName
+clv:hasName rdf:type owl:DatatypeProperty ;
+            rdfs:domain clv:City ;
+            rdfs:range rdfs:Literal ;
+            rdfs:label "City name"@en .
+
+
+###  https://w3id.org/italia/onto/COV/legalName
+cov:legalName rdf:type owl:DatatypeProperty ;
+              rdfs:domain cov:Organization ;
+              rdfs:range rdfs:Literal ;
+              rdfs:label "Legal name"@en .
+
+
+###  https://w3id.org/italia/onto/l0/identifier
+l0:identifier rdf:type owl:DatatypeProperty ;
+              rdfs:domain cov:Organization ;
+              rdfs:range rdfs:Literal ;
+              rdfs:label "Identifier"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/italia/health/onto/health-organisations/HealthCareAuthority
+:HealthCareAuthority rdf:type owl:Class ;
+                     rdfs:subClassOf :HealthOrganization ;
+                     owl:disjointWith :HealthcareFacility .
+
+
+###  https://w3id.org/italia/health/onto/health-organisations/HealthOrganization
+:HealthOrganization rdf:type owl:Class ;
+                    rdfs:subClassOf cov:Organization .
+
+
+###  https://w3id.org/italia/health/onto/health-organisations/HealthcareFacility
+:HealthcareFacility rdf:type owl:Class ;
+                    rdfs:subClassOf :HealthOrganization .
+
+
+###  https://w3id.org/italia/health/onto/health-organisations/InpatientFacility
+:InpatientFacility rdf:type owl:Class ;
+                   rdfs:subClassOf :HealthcareFacility .
+
+
+###  https://w3id.org/italia/onto/CLV/City
+clv:City rdf:type owl:Class .
+
+
+###  https://w3id.org/italia/onto/COV/Organization
+cov:Organization rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/italia/data/health/city-BOLOGNA
+data:city-BOLOGNA rdf:type owl:NamedIndividual ,
+                           clv:City ;
+                  clv:hasIstatCode "037006" ;
+                  clv:hasName "BOLOGNA"@it .
+
+
+###  https://w3id.org/italia/data/health/city-FERRARA
+data:city-FERRARA rdf:type owl:NamedIndividual ,
+                           clv:City ;
+                  clv:hasIstatCode "038008" ;
+                  clv:hasName "FERRARA"@it .
+
+
+###  https://w3id.org/italia/data/health/city-MILANO
+data:city-MILANO rdf:type owl:NamedIndividual ,
+                          clv:City ;
+                 clv:hasIstatCode "015146" ;
+                 clv:hasName "MILANO"@it .
+
+
+###  https://w3id.org/italia/data/health/city-NOVARA
+data:city-NOVARA rdf:type owl:NamedIndividual ,
+                          clv:City ;
+                 clv:hasIstatCode "003106" ;
+                 clv:hasName "NOVARA"@it .
+
+
+###  https://w3id.org/italia/data/health/city-PINEROLO
+data:city-PINEROLO rdf:type owl:NamedIndividual ,
+                            clv:City ;
+                   clv:hasIstatCode "001191" ;
+                   clv:hasName "PINEROLO"@it .
+
+
+###  https://w3id.org/italia/data/health/city-TORINO
+data:city-TORINO rdf:type owl:NamedIndividual ,
+                          clv:City ;
+                 clv:hasIstatCode "001272" ;
+                 clv:hasName "TORINO"@it .
+
+
+###  https://w3id.org/italia/data/health/struttura-010007
+data:struttura-010007 rdf:type owl:NamedIndividual ,
+                               :InpatientFacility ;
+                      clv:hasSpatialCoverage data:city-TORINO ;
+                      :hasFemaleStaffCount 722 ;
+                      :hasMaleStaffCount 199 ;
+                      :hasPlannedBeds 235 ;
+                      :hasTotalStaffCount 921 ;
+                      cov:legalName "OSPEDALE MARTINI"@it ;
+                      l0:identifier "010007" .
+
+
+###  https://w3id.org/italia/data/health/struttura-010011
+data:struttura-010011 rdf:type owl:NamedIndividual ,
+                               :InpatientFacility ;
+                      clv:hasSpatialCoverage data:city-TORINO ;
+                      :hasFemaleStaffCount 798 ;
+                      :hasMaleStaffCount 294 ;
+                      :hasPlannedBeds 453 ;
+                      :hasTotalStaffCount 1092 ;
+                      cov:legalName "TORINO NORD EMERGENZA SAN GIOVANNI BOSCO"@it ;
+                      l0:identifier "010011" .
+
+
+###  https://w3id.org/italia/data/health/struttura-010030
+data:struttura-010030 rdf:type owl:NamedIndividual ,
+                               :InpatientFacility ;
+                      clv:hasSpatialCoverage data:city-PINEROLO ;
+                      :hasFemaleStaffCount 666 ;
+                      :hasMaleStaffCount 187 ;
+                      :hasPlannedBeds 299 ;
+                      :hasTotalStaffCount 853 ;
+                      cov:legalName "OSPEDALI RIUNITI PINEROLO"@it ;
+                      l0:identifier "010030" .
+
+
+###  https://w3id.org/italia/data/health/struttura-010905
+data:struttura-010905 rdf:type owl:NamedIndividual ,
+                               :InpatientFacility ;
+                      clv:hasSpatialCoverage data:city-NOVARA ;
+                      :hasFemaleStaffCount 2117 ;
+                      :hasMaleStaffCount 788 ;
+                      :hasPlannedBeds 754 ;
+                      :hasTotalStaffCount 2905 ;
+                      cov:legalName "AZIENDA OSPEDALIERA NOVARA E GALLIATE"^^rdfs:Literal ;
+                      l0:identifier "010905" .
+
+
+###  https://w3id.org/italia/data/health/struttura-030703
+data:struttura-030703 rdf:type owl:NamedIndividual ,
+                               :InpatientFacility ;
+                      clv:hasSpatialCoverage data:city-MILANO ;
+                      :hasFemaleStaffCount 3331 ;
+                      :hasMaleStaffCount 1199 ;
+                      :hasPlannedBeds 1065 ;
+                      :hasTotalStaffCount 4530 ;
+                      cov:legalName "ASST FATEBENEFRATELLI SACCO"@it ;
+                      l0:identifier "030703" .
+
+
+###  https://w3id.org/italia/data/health/struttura-030935
+data:struttura-030935 rdf:type owl:NamedIndividual ,
+                               :InpatientFacility ;
+                      clv:hasSpatialCoverage data:city-MILANO ;
+                      :hasFemaleStaffCount 3141 ;
+                      :hasMaleStaffCount 1497 ;
+                      :hasPlannedBeds 997 ;
+                      :hasTotalStaffCount 4638 ;
+                      l0:identifier "IRCCS S. RAFFAELE - MILANO"@it ,
+                                    "030935" .
+
+
+###  https://w3id.org/italia/data/health/struttura-080908
+data:struttura-080908 rdf:type owl:NamedIndividual ,
+                               :InpatientFacility ;
+                      clv:hasSpatialCoverage data:city-BOLOGNA ;
+                      :hasFemaleStaffCount 4036 ;
+                      :hasMaleStaffCount 1721 ;
+                      :hasPlannedBeds 1298 ;
+                      :hasTotalStaffCount 5757 ;
+                      cov:legalName "IRCCS POLICLINICO DI SANT'ORSOLA BOLOGNA"@it ;
+                      l0:identifier "080908" .
+
+
+###  https://w3id.org/italia/data/health/struttura-080909
+data:struttura-080909 rdf:type owl:NamedIndividual ,
+                               :InpatientFacility ;
+                      clv:hasSpatialCoverage data:city-FERRARA ;
+                      :hasFemaleStaffCount 1957 ;
+                      :hasMaleStaffCount 637 ;
+                      :hasPlannedBeds 675 ;
+                      :hasTotalStaffCount 2594 ;
+                      cov:legalName "AZIENDA OSPEDALIERO-UNIVERSITARIA DI FERRARA"@it ;
+                      l0:identifier "080909" .
+
+
+###  https://w3id.org/italia/data/health/struttura-080960
+data:struttura-080960 rdf:type owl:NamedIndividual ,
+                               :InpatientFacility ;
+                      clv:hasSpatialCoverage data:city-BOLOGNA ;
+                      :hasFemaleStaffCount 892 ;
+                      :hasMaleStaffCount 475 ;
+                      :hasPlannedBeds 325 ;
+                      :hasTotalStaffCount 1367 ;
+                      cov:legalName "ISTITUTO ORTOPEDICO RIZZOLI"@it ;
+                      l0:identifier "080960" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

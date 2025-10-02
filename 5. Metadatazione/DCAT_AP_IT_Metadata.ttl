@@ -1,0 +1,42 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatapit: <http://dati.gov.it/onto/dcatapit#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<https://metoditeam.it/data/catalog/progetto2-ontologia-sanitaria>
+  a dcatapit:Catalog , dcat:Catalog ;
+  dct:title "Catalogo Progetto2 Ontologia Sanitaria - Metoditeam"@it ;
+  dct:description "Il catalogo dei dati aperti prodotti dal Metoditeam nel progetto di ontologia sanitaria per il corso MITD"@it ;
+  dct:modified "2025-06-17"^^xsd:date ;
+  dct:publisher <https://metoditeam.it.it/data/organisation/unibo> ;
+  dcat:dataset <https://metoditeam.it/data/dataset/progetto2-ospedali> .
+
+<https://metoditeam.it/data/dataset/progetto2-ospedali>
+  a dcatapit:Dataset , dcat:Dataset ;
+  dct:identifier "metoditeam:progetto2-ospedali" ;
+  dct:description "Il dataset contiene i dati RDF e CSV relativi alle strutture sanitarie inpatient in diverse città italiane, arricchiti con metadati semantici e modellati secondo l’ontologia estesa progettata nel contesto del corso MITD."@it ;
+  dct:modified "2025-06-17"^^xsd:date ;
+  dct:rightsHolder <https://metoditeam.it/data/organisation/unibo> ;
+  dct:title "Strutture ospedaliere inpatient - Progetto 2 MITD"@it ;
+  dcat:distribution <https://metoditeam.it/data/distribution/progetto2-csv> ,
+                    <https://metoditeam.it/data/distribution/progetto2-ttl> ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/HEAL> ;
+  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/IRREG> .
+
+<https://metoditeam.it/data/distribution/progetto2-csv>
+  a dcatapit:Distribution , dcat:Distribution ;
+  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+  dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+  dcat:accessURL <https://metoditeam.it/data/distribution/progetto2_UTF8.csv> .
+
+<https://metoditeam.it/data/distribution/progetto2-ttl>
+  a dcatapit:Distribution , dcat:Distribution ;
+  dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
+  dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+  dcat:accessURL <https://metoditeam.it/data/distribution/OntologyWithInstances_Turtle.ttl> .
+
+<https://metoditeam.it/data/organisation/unibo>
+  a dcatapit:Agent , foaf:Agent ;
+  dct:identifier "uni_bo" ;
+  foaf:name "Università di Bologna"@it .

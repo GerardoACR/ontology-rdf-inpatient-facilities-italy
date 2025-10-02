@@ -1,0 +1,33 @@
+prefixes:
+  data: https://w3id.org/italia/data/health/
+  clv: https://w3id.org/italia/onto/CLV/
+  l0: https://w3id.org/italia/onto/l0/
+  cov: https://w3id.org/italia/onto/COV/
+  : https://w3id.org/italia/onto/health/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+mappings:
+
+  struttureOspedaliere:
+    sources:
+      - [Progetto2_UTF8.csv~csv]
+    s: data:struttura-$(codiceStruttura)
+    po:
+      - [a, :InpatientFacility]
+      - [l0:identifier, $(codiceStruttura)]
+      - [cov:legalName, $(denominazioneStruttura)]
+      - [:hasPlannedBeds, $(postiLettoPrevisti)~xsd:integer]
+      - [:hasMaleStaffCount, $(personaleUominiTotale)~xsd:integer]
+      - [:hasFemaleStaffCount, $(personaleDonneTotale)~xsd:integer]
+      - [:hasTotalStaffCount, $(personaleTotale)~xsd:integer]
+      - [clv:hasSpatialCoverage, data:city-$(comune)~iri]
+
+  comuni:
+    sources:
+      - [Progetto2_UTF8.csv~csv]
+    s: data:city-$(comune)
+    po:
+      - [a, clv:City]
+      - [clv:hasName, $(comune)]
+      - [clv:hasIstatCode, $(codiceISTATComune)]

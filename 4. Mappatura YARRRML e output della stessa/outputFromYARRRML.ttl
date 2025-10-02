@@ -1,0 +1,125 @@
+@prefix : <https://w3id.org/italia/onto/health/> .
+@prefix data: <https://w3id.org/italia/data/health/> .
+@prefix cov: <https://w3id.org/italia/onto/COV/> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#################################################################
+#    CITIES
+#################################################################
+#BOLOGNA
+data:city-BOLOGNA a clv:City ;
+    clv:hasName "BOLOGNA"@it ;
+    clv:hasIstatCode "037006" .
+
+#FERRARA
+data:city-FERRARA a clv:City ;
+    clv:hasName "FERRARA"@it ;
+    clv:hasIstatCode "038008" .
+
+#MILANO
+data:city-MILANO a clv:City ;
+    clv:hasName "MILANO"@it ;
+    clv:hasIstatCode "015146" .
+
+#NOVARA
+data:city-NOVARA a clv:City ;
+    clv:hasName "NOVARA"@it ;
+    clv:hasIstatCode "003106" .
+
+#PINEROLO
+data:city-PINEROLO a clv:City ;
+    clv:hasName "PINEROLO"@it ;
+    clv:hasIstatCode "001191" .
+
+#TORINO
+data:city-TORINO a clv:City ;
+    clv:hasName "TORINO"@it ;
+    clv:hasIstatCode "001272" .
+
+#################################################################
+#    STRUCTURES
+#################################################################
+
+data:struttura-010030 a :InpatientFacility ;
+    l0:identifier "010030" ;
+    cov:legalName "OSPEDALI RIUNITI PINEROLO"@it ;
+    :hasPlannedBeds 299 ;
+    :hasMaleStaffCount 187 ;
+    :hasFemaleStaffCount 666 ;
+    :hasTotalStaffCount 853 ;
+    clv:hasSpatialCoverage data:city-PINEROLO .
+
+data:struttura-010905 a :InpatientFacility ;
+    l0:identifier "010905" ;
+    cov:legalName "AZIENDA OSPEDALIERA NOVARA E GALLIATE"@it ;
+    :hasPlannedBeds 754 ;
+    :hasMaleStaffCount 788 ;
+    :hasFemaleStaffCount 2117 ;
+    :hasTotalStaffCount 2905 ;
+    clv:hasSpatialCoverage data:city-NOVARA .
+
+data:struttura-010007 a :InpatientFacility ;
+    l0:identifier "010007" ;
+    cov:legalName "OSPEDALE MARTINI"@it ;
+    :hasPlannedBeds 235 ;
+    :hasMaleStaffCount 199 ;
+    :hasFemaleStaffCount 722 ;
+    :hasTotalStaffCount 921 ;
+    clv:hasSpatialCoverage data:city-TORINO .
+
+data:struttura-010011 a :InpatientFacility ;
+    l0:identifier "010011" ;
+    cov:legalName "TORINO NORD EMERGENZA SAN GIOVANNI BOSCO"@it ;
+    :hasPlannedBeds 453 ;
+    :hasMaleStaffCount 294 ;
+    :hasFemaleStaffCount 798 ;
+    :hasTotalStaffCount 1092 ;
+    clv:hasSpatialCoverage data:city-TORINO .
+
+data:struttura-030703 a :InpatientFacility ;
+    l0:identifier "030703" ;
+    cov:legalName "ASST FATEBENEFRATELLI SACCO"@it ;
+    :hasPlannedBeds 1065 ;
+    :hasMaleStaffCount 1199 ;
+    :hasFemaleStaffCount 3331 ;
+    :hasTotalStaffCount 4530 ;
+    clv:hasSpatialCoverage data:city-MILANO .
+
+data:struttura-030935 a :InpatientFacility ;
+    l0:identifier "030935" ;
+    cov:legalName "IRCCS S. RAFFAELE - MILANO"@it ;
+    :hasPlannedBeds 997 ;
+    :hasMaleStaffCount 1497 ;
+    :hasFemaleStaffCount 3141 ;
+    :hasTotalStaffCount 4638 ;
+    clv:hasSpatialCoverage data:city-MILANO .
+
+data:struttura-080908 a :InpatientFacility ;
+    l0:identifier "080908" ;
+    cov:legalName "IRCCS POLICLINICO DI SANT'ORSOLA BOLOGNA"@it ;
+    :hasPlannedBeds 1298 ;
+    :hasMaleStaffCount 1721 ;
+    :hasFemaleStaffCount 4036 ;
+    :hasTotalStaffCount 5757 ;
+    clv:hasSpatialCoverage data:city-BOLOGNA .
+
+data:struttura-080909 a :InpatientFacility ;
+    l0:identifier "080909" ;
+    cov:legalName "AZIENDA OSPEDALIERO-UNIVERSITARIA DI FERRARA"@it ;
+    :hasPlannedBeds 675 ;
+    :hasMaleStaffCount 637 ;
+    :hasFemaleStaffCount 1957 ;
+    :hasTotalStaffCount 2594 ;
+    clv:hasSpatialCoverage data:city-FERRARA .
+
+data:struttura-080960 a :InpatientFacility ;
+    l0:identifier "080960" ;
+    cov:legalName "ISTITUTO ORTOPEDICO RIZZOLI"@it ;
+    :hasPlannedBeds 325 ;
+    :hasMaleStaffCount 475 ;
+    :hasFemaleStaffCount 892 ;
+    :hasTotalStaffCount 1367 ;
+    clv:hasSpatialCoverage data:city-BOLOGNA .
