@@ -1,2 +1,6 @@
-# ontology-rdf-inpatient-facilities-italy
-This repository contains some deliverables for the course of Metodi informatici per la trasformazione digitale (AA 2024–2025, University of Bologna): ontology extension, tabular→RDF mapping, and DCAT-AP_IT metadata model for Italian inpatient healthcare facilities.
+# Italian Healthcare Ontology & RDF Dataset
+
+Ontology modeling, CSV → RDF mapping (YARRRML/RML), and DCAT-AP_IT metadata for an interoperable healthcare dataset of inpatient facilities in Italy.
+
+Author / roles: Gerardo Antonio Corral Ruiz — Project Manager (PM), Product Owner (PO) and lead developer.
+Team: 4 people. I coordinated the backlog, priorities, and delivery while implementing most of the technical work end-to-end.
