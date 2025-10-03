@@ -6,6 +6,19 @@ Course context: Metodi informatici per la trasformazione digitale (AA 2024–202
 
 I acted as Project Manager (PM) for the course backlog and Product Owner (PO) for this project. This deliverable was conceived, implemented, and documented entirely by me (ontology, CSV curation, YARRRML/RML mapping and execution, DCAT-AP_IT metadata, and repository documentation). We were a 4-person team for the course, but my teammates focused on other projects, while I completed this one end-to-end. I tracked the overall backlog in Taiga.
 
+I used Taiga to manage the backlog, sprints, user stories, and acceptance criteria.
+Access to the live board is restricted by university SSO, so below are curated screenshots of the process (board, user stories, and story details).
+
+Examples of task tracking in Taiga
+
+Sprint board and user-story flow (Backlog → In progress → Review → Done), with effort points and attachments.
+
+<table> <tr> <td><img src="assets/images/Screenshot1.png" alt="Taiga board - sprint overview 1" width="100%"></td> </tr> <tr> <td><img src="assets/images/Screenshot2.png" alt="Taiga board - sprint overview 2" width="100%"></td> </tr> </table>
+
+User-story detail pages, including goals, acceptance criteria, tags, and attached deliverables (TTL, YAML, CSV).
+
+<table> <tr> <td><img src="assets/images/Screenshot3.png" alt="User story - RDF generation with RML" width="100%"></td> </tr> <tr> <td><img src="assets/images/Screenshot4.png" alt="User story - YARRRML mapping" width="100%"></td> </tr> <tr> <td><img src="assets/images/Screenshot5.png" alt="User story - Ontology extension in Turtle" width="100%"></td> </tr> </table>
+
 ```
 🧭 Repository layout
 
