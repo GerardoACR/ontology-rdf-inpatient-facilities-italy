@@ -13,11 +13,8 @@ Examples of task tracking in Taiga
 
 Sprint board and user-story flow (Backlog → In progress → Review → Done), with effort points and attachments.
 
-<table> <tr> <td><img src="assets/images/Screenshot1.png" alt="Taiga board - sprint overview 1" width="100%"></td> </tr> <tr> <td><img src="assets/images/Screenshot2.png" alt="Taiga board - sprint overview 2" width="100%"></td> </tr> </table>
-
-User-story detail pages, including goals, acceptance criteria, tags, and attached deliverables (TTL, YAML, CSV).
-
-<table> <tr> <td><img src="assets/images/Screenshot3.png" alt="User story - RDF generation with RML" width="100%"></td> </tr> <tr> <td><img src="assets/images/Screenshot4.png" alt="User story - YARRRML mapping" width="100%"></td> </tr> <tr> <td><img src="assets/images/Screenshot5.png" alt="User story - Ontology extension in Turtle" width="100%"></td> </tr> </table>
+<table> <tr> <td><img src="assets/images/Screenshot1.png" alt="Taiga board - sprint overview 1" width="500"></td> </tr> <tr> <td><img src="assets/images/Screenshot2.png" alt="Taiga board - sprint overview 2" width="500">
+<img src="assets/images/Screenshot3.png" alt="User story - RDF generation with RML" width="500"></td> </tr> <tr> <td><img src="assets/images/Screenshot4.png" alt="User story - YARRRML mapping" width="500"></td> </tr> <tr> <td><img src="assets/images/Screenshot5.png" alt="User story - Ontology extension in Turtle" width="500"></td> </tr> </table>
 
 ```
 🧭 Repository layout
